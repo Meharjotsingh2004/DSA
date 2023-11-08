@@ -1,18 +1,30 @@
 #include<iostream>
 using namespace std ;
 
-int main (){
-    int arr[]={1,2,3,4,5};
-    for(int i =0 ; i<sizeof(arr)/4 ; i =i+2){
-        if(i+1<sizeof(arr)/4){
-            swap(arr[i], arr[i+1]);
+
+
+void printarray(int arr[], int size){
+    for (int i=0 ; i<size ; i++){
+        cout << arr[i]<< " ";
+    }
+
+}
+void swap_alternate(int arr[] , int size){
+    for(int i=0 ; i< size ; i+=2){
+        if(i+1<size){
+        swap(arr[i],arr[i+1]);
         }
+    }
 
 
-    }
-    for (int i=0 ;i<sizeof(arr)/4 ; i++){
-        cout << arr[i];
-    }
+}
+
+int main (){
+    int arr1[]={1,2,3,4,5,55,33,11,43 , 55};
+    swap_alternate(arr1, sizeof(arr1)/4);
+    cout << endl;
+
+    printarray(arr1 , sizeof(arr1)/4);
     
 
 }
